@@ -9,6 +9,10 @@
 	--bg-color: #f4f4f4;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 /* base styles */
 body {
 	font-family: Poppins, sans-serif;
