@@ -31,7 +31,7 @@ export default function Navbar() {
 					<li>
 						{!isPending && (
 							<button className="btn" onClick={logout}>
-								Logout
+								Log out
 							</button>
 						)}
 						{isPending && (
