@@ -14,7 +14,7 @@ export default function OnlineUsers() {
 					<div key={user.id} className="users-item">
 						{user.online && <span className="online-user"></span>}
 						<span>{user.displayName}</span>
-						<Avatar src={user.photoUrl} />
+						<Avatar src={user.photoURL} />
 					</div>
 				))}
 		</div>

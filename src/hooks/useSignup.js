@@ -32,14 +32,14 @@ export const useSignup = () => {
 			const img = await projectStorage.ref(uploadPath).put(thumbnail);
 			const imgUrl = await img.ref.getDownloadURL();
 
-			// add display name to user
+			// add display name and photoURL to user
 			await res.user.updateProfile({ displayName, photoURL: imgUrl });
 
 			// create a user doc
 			await projectFirestore
 				.collection('users')
 				.doc(res.user.uid)
-				.set({ online: true, displayName, photoUrl: imgUrl });
+				.set({ online: true, displayName, photoURL: imgUrl });
 
 			// login action
 			dispatch({ type: 'LOGIN', payload: res.user });
