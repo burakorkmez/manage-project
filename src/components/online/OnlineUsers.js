@@ -1,6 +1,6 @@
 // styles
 import { useCollection } from '../../hooks/useCollection';
-import { Avatar } from '../avatar/Avatar';
+import Avatar from '../avatar/Avatar';
 import './OnlineUsers.css';
 
 export default function OnlineUsers() {

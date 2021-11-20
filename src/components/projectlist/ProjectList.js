@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Avatar } from '../../components/avatar/Avatar';
+import Avatar from '../../components/avatar/Avatar';
 
 // styles
 import './ProjectList.css';

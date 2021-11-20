@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Avatar } from '../avatar/Avatar';
+import Avatar from '../avatar/Avatar';
 
 // styles & images
 import './Sidebar.css';
