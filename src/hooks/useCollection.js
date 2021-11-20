@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { projectFirestore } from '../firebase/config';
 
 export const useCollection = (collection, _query, _orderBy) => {
-	const [documents, setDocuments] = useState();
+	const [documents, setDocuments] = useState(null);
 	const [error, setError] = useState(null);
 
 	// if we don't use a ref infinite loop will happen in useEffect
