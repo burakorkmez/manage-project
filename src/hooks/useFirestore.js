@@ -76,6 +76,21 @@ export const useFirestore = (collection) => {
 		}
 	};
 
+	// delete document
+	const deleteDocument = async (id) => {
+		dispatch({ type: 'IS_PENDING' });
+
+		try {
+			const deletedDocument = await ref.doc(id).delete();
+			dispatchIfNotCancelled({
+				type: 'DELETED_DOCUMENT',
+				payload: deletedDocument,
+			});
+		} catch (err) {
+			dispatchIfNotCancelled({ type: 'ERROR', payload: 'Could not delete' });
+		}
+	};
+
 	// update document
 	const updateDocument = async (id, updates) => {
 		dispatch({ type: 'IS_PENDING' });
@@ -96,5 +111,5 @@ export const useFirestore = (collection) => {
 		return () => setIsCancelled(true);
 	}, []);
 
-	return { addDocument, updateDocument, response };
+	return { addDocument, deleteDocument, updateDocument, response };
 };
