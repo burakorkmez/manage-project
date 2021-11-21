@@ -1,7 +1,10 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { useAuthContext } from './hooks/useAuthContext';
 
 // styles
 import './App.css';
+
+// pages and components
 import Dashboard from './pages/dashboard/Dashboard';
 import Create from './pages/create/Create';
 import Project from './pages/project/Project';
@@ -9,10 +12,7 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Navbar from './components/navbar/Navbar';
 import Sidebar from './components/sidebar/Sidebar';
-import { useAuthContext } from './hooks/useAuthContext';
 import OnlineUsers from './components/online/OnlineUsers';
-
-// pages and components
 
 function App() {
 	const { user, authIsReady } = useAuthContext();
