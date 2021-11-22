@@ -75,7 +75,11 @@ export default function Signup() {
 				<input required type="file" onChange={handleFileChange} />
 				{thumbnailError && <div className="error">{thumbnailError}</div>}
 			</label>
-			{!isPending && <button className="btn">Sign up</button>}
+			{!isPending && (
+				<button className="btn" disabled={thumbnailError}>
+					Sign up
+				</button>
+			)}
 			{isPending && (
 				<button className="btn" disabled>
 					Loading...
